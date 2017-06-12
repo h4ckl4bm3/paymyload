@@ -1,2 +1,1 @@
-echo "coucou"
-pause
+shutdown -r -t 5
